@@ -1,2 +1,2 @@
-# РўРµСЃС‚РѕРІРѕРµ Р·Р°РґР°РЅРёРµ "РљРЅРёР¶РЅР°СЏ РїРѕР»РєР°"
-<a href="https://plnkr.co/edit/nRFnUsBuvEwz8egvLkAb">РЎСЃС‹Р»РєР° РЅР° РґРµРјРѕ</a>
+# Тестовое задание "Книжная полка"
+<a href="https://plnkr.co/edit/nRFnUsBuvEwz8egvLkAb">Ссылка на демо</a>

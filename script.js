@@ -130,7 +130,3 @@ window.onload = function() {
     create_book(Books[i].title,Books[i].author,Books[i].year,Books[i].imgsrc,i);
   }
 }
-
-
-
-
