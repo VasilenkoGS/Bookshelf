@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+      <div id="bookshelf">
+        <h1>Книжная полка</h1>
+        <button type="button" id="add_book" class="book-button book-button-save">Добавить книгу</button>
+      </div>
+      <div id="form" style="display:none" >
+        <h1 id="status"></h1>
+        <form name="bookform">
+          <input id="id" type="text" name="id" hidden>
+          <label for="title">Наименование:</label>
+          <input id="title" name="title" type="text" required/>
+          <label for="author">Автор:</label>
+          <input id="author" name="author" type="text" required/>
+          <label for="year">Год выпуска:</label>
+          <input id="year" name="year" min="1900" max="2100" maxlength="4" type="number" required/>
+          <label for="imgsrc">Изображение:</label>
+          <input id="imgsrc" name="imgsrc" type="text" required/>
+          <button type="submit" class="book-button book-button-save">Сохранить</button>
+          <button id="cancel_book" type="button" class="book-button book-button-default">Отменить</button>
+        </form>
+      </div>
+  </body>
+
+</html>
