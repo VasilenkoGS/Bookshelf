@@ -5,26 +5,26 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-
+ 
   <body>
       <div id="bookshelf">
-        <h1>РљРЅРёР¶РЅР°СЏ РїРѕР»РєР°</h1>
-        <button type="button" id="add_book" class="book-button book-button-save">Р”РѕР±Р°РІРёС‚СЊ РєРЅРёРіСѓ</button>
+        <h1>Книжная полка</h1>
+        <button type="button" id="add_book" class="book-button book-button-save">Добавить книгу</button>
       </div>
       <div id="form" style="display:none" >
         <h1 id="status"></h1>
         <form name="bookform">
-          <input id="id" type="text" name="id" hidden>
-          <label for="title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</label>
+          <input id="id" type="text" value='' name="id" hidden>
+          <label for="title">Наименование:</label>
           <input id="title" name="title" type="text" required/>
-          <label for="author">РђРІС‚РѕСЂ:</label>
+          <label for="author">Автор:</label>
           <input id="author" name="author" type="text" required/>
-          <label for="year">Р“РѕРґ РІС‹РїСѓСЃРєР°:</label>
-          <input id="year" name="year" min="1900" max="2100" maxlength="4" type="number" required/>
-          <label for="imgsrc">РР·РѕР±СЂР°Р¶РµРЅРёРµ:</label>
+          <label for="year">Год выпуска:</label>
+          <input id="year" name="year" pattern="\d*" maxlength="4" placeholder="ГГГГ" type="text" required/>
+          <label for="imgsrc">Изображение:</label>
           <input id="imgsrc" name="imgsrc" type="text" required/>
-          <button type="submit" class="book-button book-button-save">РЎРѕС…СЂР°РЅРёС‚СЊ</button>
-          <button id="cancel_book" type="button" class="book-button book-button-default">РћС‚РјРµРЅРёС‚СЊ</button>
+          <button type="submit" class="book-button book-button-save">Сохранить</button>
+          <button id="cancel_book" type="button" class="book-button book-button-default">Отменить</button>
         </form>
       </div>
   </body>

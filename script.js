@@ -1,10 +1,9 @@
 var Books = [
-    {imgsrc:'http://i50.fastpic.ru/big/2013/0807/1b/630da07f8d40d457146c9fb41c72a91b.jpg', title:'РўСЂРѕРїС‹ РїРѕ Р±РѕР»СЊС€РѕРјСѓ СЃРµСЂС‚Р°РЅСѓ', author:'Р–СѓР°РЅ Р“РёРјР°СЂР°Р№РЅСЃ Р РѕР·Р°', year:'1956'},
-    {imgsrc:'https://cv1.litres.ru/static/bookimages/09/23/36/09233613.bin.dir/09233613.cover_330.jpg', title:'РЎС‚Рѕ Р»РµС‚ РѕРґРёРЅРѕС‡РµСЃС‚РІР°', author:'Р“Р°Р±СЂРёСЌР»СЊ Р“Р°СЂСЃРёР° РњР°СЂРєРµСЃ', year:'1967'},
-    {imgsrc:'http://royallib.com/data/images/33/cover_33332.jpg', title:'РЎС‚Р°СЂРёРє Рё РјРѕСЂРµ', author:'Р­СЂРЅРµСЃС‚ РҐРµРјРёРЅРіСѓСЌР№', year:'1952'},
-    {imgsrc:'http://ozon-st.cdn.ngenix.net/multimedia/1004090865.jpg', title:'РџРµРїРїРё Р”Р»РёРЅРЅС‹Р№С‡СѓР»РѕРє', author:'РђСЃС‚СЂРёРґ Р›РёРЅРґРіСЂРµРЅ', year:'1945'},
-    {imgsrc:'https://www.e-reading.club/cover/1000/1000444.jpg', title:'РЁСѓРј Рё СЏСЂРѕСЃС‚СЊ', author:'	РЈРёР»СЊСЏРј Р¤РѕР»РєРЅРµСЂ', year:'1929'},
-    {imgsrc:'https://www.e-reading.club/cover/37/37234.jpg', title:'Р’РѕР»С€РµР±РЅР°СЏ РіРѕСЂР°', author:'РўРѕРјР°СЃ РњР°РЅРЅ', year:'1924'},
+    {imgsrc:'http://i50.fastpic.ru/big/2013/0807/1b/630da07f8d40d457146c9fb41c72a91b.jpg', title:'Тропы по большому сертану', author:'Жуан Гимарайнс Роза', year:'1956'},
+    {imgsrc:'https://cv1.litres.ru/static/bookimages/09/23/36/09233613.bin.dir/09233613.cover_330.jpg', title:'Сто лет одиночества', author:'Габриэль Гарсиа Маркес', year:'1967'},
+    {imgsrc:'http://royallib.com/data/images/33/cover_33332.jpg', title:'Старик и море', author:'Эрнест Хемингуэй', year:'1952'},
+    {imgsrc:'http://ozon-st.cdn.ngenix.net/multimedia/1004090865.jpg', title:'Пеппи Длинныйчулок', author:'Астрид Линдгрен', year:'1945'},
+    {imgsrc:'https://www.e-reading.club/cover/1000/1000444.jpg', title:'Шум и ярость', author:'	Уильям Фолкнер', year:'1929'},
   ];
   
 window.onload = function() {
@@ -33,9 +32,9 @@ window.onload = function() {
   var add_book = document.getElementById('add_book');
   add_book.onclick=function(){
     if(document.getElementById('id').getAttribute('value')==''){
-      document.getElementById('status').innerHTML='РЎРѕР·РґР°РЅРёРµ Р·Р°РїРёСЃРё РєРЅРёРіРё';
+      document.getElementById('status').innerHTML='Создание записи книги';
     }else{
-      document.getElementById('status').innerHTML='Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ Р·Р°РїРёСЃРё РєРЅРёРіРё';
+      document.getElementById('status').innerHTML='Редактирование записи книги';
     }
     document.getElementById('bookshelf').style.display='none';
     document.getElementById('form').style.display='';
@@ -64,10 +63,10 @@ window.onload = function() {
     var img = document.createElement('img');
     //var imgsrc_val = "https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png";
     img.setAttribute('src',imgsrc_val);
-    img.setAttribute('alt','РћР±Р»РѕР¶РєР°в„–'+index);
+    img.setAttribute('alt','Обложка№'+index);
     img.setAttribute('id','img'+index);
     
-    var helper = document.createElement('span');//РїСЃРµРІРґРѕРєР»Р°СЃСЃ РЅРµ СЂР°Р±РѕС‚Р°РµС‚, dummy-element
+    var helper = document.createElement('span');//псевдокласс не работает, dummy-element
     helper.className = "book-helper";
     cover.appendChild(helper);
     cover.appendChild(img);
@@ -98,7 +97,7 @@ window.onload = function() {
     
     var b_edit = document.createElement('button');
     b_edit.className = "book-button book-button-edit book-button-action";
-    b_edit.innerHTML = 'Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ';
+    b_edit.innerHTML = 'Редактировать';
     b_edit.onclick = function(){
       document.getElementById('id').setAttribute('value',index);
       document.getElementById('title').setAttribute('value',document.getElementById('title'+index).innerHTML);
@@ -112,7 +111,7 @@ window.onload = function() {
     
     var b_delete = document.createElement('button');
     b_delete.className = "book-button book-button-delete book-button-action";
-    b_delete.innerHTML = 'РЈРґР°Р»РёС‚СЊ';
+    b_delete.innerHTML = 'Удалить';
     b_delete.onclick = function(){
       document.getElementById(index).remove(this);
     }

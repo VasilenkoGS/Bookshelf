@@ -1,6 +1,9 @@
 html{
   overflow-y:scroll;
 }
+html,body{
+  max-width:800px;
+}
 #bookshelf{
   width:100%;
 }
@@ -20,10 +23,12 @@ html{
   display: inline-block;
   vertical-align:middle;
   width:20%;
+  max-width:100px;
   height:200px;
 }
 .book-data{
   display: inline-block;
+  overflow: hidden;
   vertical-align:middle;
   width:60%;
   height:200px;
@@ -32,6 +37,7 @@ html{
   display: inline-block;
   vertical-align:middle;
   width:20%;
+  max-width:200px;
 }
 .book-summary{
   list-style-type: none;
@@ -92,7 +98,8 @@ input{
   width:90%;
   margin-bottom:30px;
 }
-input[type="number"]{
+#year{
+  min-width:60px;
   width:10%;
 }
 #add_book{
@@ -102,7 +109,7 @@ li:first-of-type{
   font-weight:bold;
 }
 li:nth-of-type(3):after{
-  content: ' Ð³.';
+  content: ' ã.';
 }
 img:before,ul:before{
   content:'';
@@ -110,31 +117,3 @@ img:before,ul:before{
   display: inline-block;
   vertical-align: middle;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
