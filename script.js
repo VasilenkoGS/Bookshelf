@@ -22,22 +22,25 @@ window.onload = function() {
       document.getElementById('title'+book['id']).innerHTML = book.title;
       document.getElementById('author'+book['id']).innerHTML = book.author;
       document.getElementById('year'+book['id']).innerHTML = book.year;
-      //document.getElementById('img'+book['id']).src = book.imgsrc;
+      document.getElementById('img'+book['id']).src = book.imgsrc;
     }
+    bookform.reset();
     cancel_book.click();
     
     return false;
   }
   
+  var book_premade = function(){
+    bookform.reset();
+  }
+  
   var add_book = document.getElementById('add_book');
   add_book.onclick=function(){
-    if(document.getElementById('id').getAttribute('value')==''){
-      document.getElementById('status').innerHTML='Создание записи книги';
-    }else{
-      document.getElementById('status').innerHTML='Редактирование записи книги';
-    }
+    document.getElementById('status').innerHTML='Создание записи книги';
+    bookform.reset();
     document.getElementById('bookshelf').style.display='none';
     document.getElementById('form').style.display='';
+    
   }
   var cancel_book = document.getElementById('cancel_book');
   cancel_book.onclick=function(){
@@ -99,12 +102,15 @@ window.onload = function() {
     b_edit.className = "book-button book-button-edit book-button-action";
     b_edit.innerHTML = 'Редактировать';
     b_edit.onclick = function(){
+      book_premade();
       document.getElementById('id').setAttribute('value',index);
       document.getElementById('title').setAttribute('value',document.getElementById('title'+index).innerHTML);
       document.getElementById('author').setAttribute('value',document.getElementById('author'+index).innerHTML);
       document.getElementById('year').setAttribute('value',document.getElementById('year'+index).innerHTML);
-      document.getElementById('imgsrc').setAttribute('value',document.getElementById('img'+index).src);
-      add_book.click();
+      document.getElementById('imgsrc').setAttribute('value',document.getElementById('img'+index).getAttribute('src'));
+      document.getElementById('status').innerHTML='Редактирование записи книги';
+      document.getElementById('bookshelf').style.display='none';
+      document.getElementById('form').style.display='';
     }
     actions.appendChild(b_edit);
     
