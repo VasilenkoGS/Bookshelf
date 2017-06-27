@@ -5,9 +5,21 @@ var Books = [
     {imgsrc:'http://ozon-st.cdn.ngenix.net/multimedia/1004090865.jpg', title:'Пеппи Длинныйчулок', author:'Астрид Линдгрен', year:'1945'},
     {imgsrc:'https://www.e-reading.club/cover/1000/1000444.jpg', title:'Шум и ярость', author:'	Уильям Фолкнер', year:'1929'},
   ];
+
+
+
   
 window.onload = function() {
   
+    document.getElementById('year').addEventListener('change', function(event) {
+        if (parseInt(document.getElementById('year').value)<=2017) {
+            document.getElementById('year').setCustomValidity('');
+        } else {
+            document.getElementById('year').setCustomValidity('Год должен быть не больше 2017');
+        }
+    }, false);
+  
+
   document.bookform.onsubmit=function() {
     var book={};
     for(var i=0;i<document.bookform.length-2;i++){
@@ -29,6 +41,7 @@ window.onload = function() {
     
     return false;
   }
+  
   
   var book_premade = function(){
     bookform.reset();
